@@ -3,6 +3,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using TaskComputer.Application.Common.Behaviors;
+using TaskComputer.Application.Features.User.Commands;
 
 namespace TaskComputer.Application
 {
@@ -23,8 +24,8 @@ namespace TaskComputer.Application
                 typeof(IPipelineBehavior<,>),
                 typeof(ValidationBehavior<,>)
             );
-            // ejemplo de como registrar validadores de comandos específicos
-            //services.AddValidatorsFromAssembly(typeof(CreateCustomCommandValidator).Assembly);
+            // Registrar validadores de comandos
+            services.AddValidatorsFromAssembly(typeof(CreateUserCommandValidator).Assembly);
 
             return services;
         }

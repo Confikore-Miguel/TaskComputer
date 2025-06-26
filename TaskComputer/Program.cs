@@ -1,11 +1,13 @@
 using TaskComputer;
 using TaskComputer.Application;
+using TaskComputer.Infrastructure;
 using TaskComputer.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddPresentation()
-                .AddApplication();
+                .AddApplication()
+                .AddInfrastructure(builder.Configuration);
 
 
 var app = builder.Build();
