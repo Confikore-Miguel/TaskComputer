@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Persistence\Configuration\" />
     <Folder Include="Persistence\Migration\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.17">
       <PrivateAssets>all</PrivateAssets>
@@ -21,6 +20,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.17" />
     <PackageReference Include="Microsoft.SqlServer.Server" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskComputer.Application\TaskComputer.Application.csproj" />
+    <ProjectReference Include="..\TaskComputer.Domain\TaskComputer.Domain.csproj" />
   </ItemGroup>
 
 </Project>

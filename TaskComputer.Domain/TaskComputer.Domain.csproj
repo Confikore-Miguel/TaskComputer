@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DomainErrors\" />
     <Folder Include="DomainEvents\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Entities\" />
-    <Folder Include="ValueObjects\" />
   </ItemGroup>
 
   <ItemGroup>
