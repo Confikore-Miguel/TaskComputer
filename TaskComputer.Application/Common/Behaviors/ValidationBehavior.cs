@@ -23,7 +23,7 @@ namespace TaskComputer.Application.Common.Behaviors
         public async Task<TResponse> Handle(TResquest request, 
             RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
-            if(_validator is not null)
+            if(_validator is null)
                 return await next(cancellationToken);
             
             var validationResult = await _validator.ValidateAsync(request, cancellationToken);

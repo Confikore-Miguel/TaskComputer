@@ -5,25 +5,34 @@ namespace TaskComputer.Application.Features.User.Commands.Create
     {
         public CreateUserCommandValidator()
         {
+            RuleFor(x => x.CreateUser)
+                .NotNull()
+                .WithMessage("El objeto CreateUser no puede ser nulo.");
+
             RuleFor(x => x.CreateUser.Name)
                 .MinimumLength(2)
                 .NotEmpty()
-                .WithMessage("Name is required.");
+                .NotNull()
+                .WithMessage("Name Es requerido.");
             RuleFor(x => x.CreateUser.LastName)
                 .MinimumLength(2)
                 .NotEmpty()
-                .WithMessage("Last name is required.");
+                .NotNull()
+                .WithMessage("LastName Es requerido.");
             RuleFor(x => x.CreateUser.Email)
                 .NotEmpty()
+                .NotNull()
                 .EmailAddress()
-                .WithMessage("Valid email is required.");
+                .WithMessage("Email Validar correo.");
             RuleFor(x => x.CreateUser.Pass)
                 .NotEmpty()
+                .NotNull()
                 .MinimumLength(6)
-                .WithMessage("Password must be at least 6 characters long.");
+                .WithMessage("Pass Debe tener minímo 6 carácteres.");
             RuleFor(x => x.CreateUser.IdRole)
                 .GreaterThan(0)
-                .WithMessage("Role ID must be greater than 0.");
+                .NotNull()
+                .WithMessage("IdRole Debe ser mayora 0");
         }
     }
 }
