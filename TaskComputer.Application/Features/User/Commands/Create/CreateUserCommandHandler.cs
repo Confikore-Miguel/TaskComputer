@@ -1,19 +1,19 @@
 ﻿using ErrorOr;
 using MediatR;
-using TaskComputer.Application.Features.User.DTOs;
 using TaskComputer.Domain.DomainErrors;
 using TaskComputer.Domain.Entities;
 using TaskComputer.Domain.Interfaces;
 using TaskComputer.Domain.Primitives;
 using TaskComputer.Domain.ValueObjects;
 
-namespace TaskComputer.Application.Features.User.Commands
+namespace TaskComputer.Application.Features.User.Commands.Create
 {
-    public sealed class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, ErrorOr<TbUser>>
+    public sealed class CreateUserCommandHandler(IUserRepository userRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateUserCommand, ErrorOr<TbUser>>
     {
 
-        private readonly IUserRepository _userRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+        private readonly IUnitOfWork _unitOfWork = unitOfWork ?? throw new ArgumentNullException(nameof(unitOfWork));
+
         public async Task<ErrorOr<TbUser>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             if (Email.Create(request.CreateUser.Email) is not Email email)

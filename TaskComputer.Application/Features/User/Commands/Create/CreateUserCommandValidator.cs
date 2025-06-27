@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-namespace TaskComputer.Application.Features.User.Commands
+namespace TaskComputer.Application.Features.User.Commands.Create
 {
     public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     {

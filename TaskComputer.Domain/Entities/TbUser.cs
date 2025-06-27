@@ -28,7 +28,7 @@ public partial class TbUser : AggregateRoot
 
     public int? IdUserAction { get; set; }
 
-    public int IdUserCreated { get; set; }
+    public int? IdUserCreated { get; set; }
 
     public virtual TbRole IdRoleNavigation { get; set; } = null!;
 

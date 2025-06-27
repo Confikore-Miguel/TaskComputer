@@ -3,7 +3,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using TaskComputer.Application.Common.Behaviors;
-using TaskComputer.Application.Features.User.Commands;
+using TaskComputer.Application.Features.User.Commands.Create;
 
 namespace TaskComputer.Application
 {

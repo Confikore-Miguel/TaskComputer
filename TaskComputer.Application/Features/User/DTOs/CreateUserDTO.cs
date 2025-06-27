@@ -8,7 +8,7 @@
         public string Pass { get; set; } = null!;
         public bool Active { get; set; }
         public int IdRole { get; set; }
-        public int IdUserAction { get; set; }
+        public int? IdUserAction { get; set; }
     }
     public class GetUser
     {
@@ -24,6 +24,6 @@
         public DateTime? DateRemoved { get; set; }
         public DateTime? DateUpdated { get; set; }
         public int? IdUserAction { get; set; }
-        public int IdUserCreated { get; set; }
+        public int? IdUserCreated { get; set; }
     }
 }

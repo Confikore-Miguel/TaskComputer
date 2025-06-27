@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TaskComputer.Infrastructure.Entities;
+using TaskComputer.Domain.Entities;
 
 namespace TaskComputer.Infrastructure.Persistence.Configuration
 {

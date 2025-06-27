@@ -11,9 +11,9 @@ namespace TaskComputer.Domain.ValueObjects
         [GeneratedRegex(Pattern)]
         private static partial Regex EmailRegex();
 
-        public static Email Create(string value)
+        public static Email? Create(string value)
         {
-            if(EmailRegex().IsMatch(value)) return new Email(value);
+            if (!EmailRegex().IsMatch(value)) return null;
             return new Email(value);
         }
     }

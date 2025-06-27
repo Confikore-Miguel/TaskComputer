@@ -13,7 +13,6 @@ namespace TaskComputer.Middlewares
             _logger = logger;
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-
             try
             {
                 await next(context);
@@ -25,8 +24,8 @@ namespace TaskComputer.Middlewares
                 {
                     Status = (int)HttpStatusCode.InternalServerError,
                     Title = "Server Error",
-                    Detail = "Server Error",
                     Type = "Server Error",
+                    Detail = ex.Message,
                     Instance = context.Request.Path
                 };
 

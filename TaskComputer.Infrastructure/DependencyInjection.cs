@@ -2,9 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaskComputer.Application.Data;
+using TaskComputer.Domain.Interfaces;
 using TaskComputer.Domain.Primitives;
 using TaskComputer.Infrastructure.Persistence;
 using TaskComputer.Infrastructure.Providers.Tenant;
+using TaskComputer.Infrastructure.Repositories;
 
 namespace TaskComputer.Infrastructure
 {
@@ -36,7 +38,7 @@ namespace TaskComputer.Infrastructure
 
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            //services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
     }

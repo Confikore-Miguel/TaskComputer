@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using TaskComputer.Application.Features.User.DTOs;
 using TaskComputer.Domain.Entities;
 
-namespace TaskComputer.Application.Features.User.Commands
+namespace TaskComputer.Application.Features.User.Commands.Create
 {
     public record CreateUserCommand(CreateUserDTO CreateUser) : IRequest<ErrorOr<TbUser>> ;
 }
